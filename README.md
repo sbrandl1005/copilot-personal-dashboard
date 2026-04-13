@@ -5,10 +5,7 @@
 
   ### Tab 1 – Adoption Overview                                                                               
   Track your Copilot usage over time and across apps. See your total
-  actions, weekly average, active days, apps used per week, and estimated                                     
-  time saved. Your User Category and a personalized recommendation display                                    
-  based on your recent habits. Use the date slider to zoom in on any time                                     
-  period.                                                                                                     
+  actions, weekly average, active days, apps used per week, and estimated time saved. Your User Category and a personalized     recommendation display based on your recent habits. Use the date slider to zoom in on any time                                   period.                                                                                                     
                                                                                                               
   ### Tab 2 – Engagement & Productivity                                                                       
   See how much time Copilot is saving you, broken down by app and by week.
