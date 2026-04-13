@@ -63,11 +63,7 @@
   | **Org Average** | The average usage across all employees in your organization with a Copilot license. |
   | **Peer Rank / Percentile** | Where you fall compared to peers. "Top 20%" means you use Copilot more than 80% of colleagues. Lower number = higher rank. |                                                            
   | **User Category** | Your usage tier — Power User, Habitual User, Novice User, Low User, or Non-User - based on your consistency   and volume over the last 12 weeks. |                                              
-  | **Outstanding / Strong / Growth Area** | How your usage ranks per app within your org. Outstanding = Top
-  10%, Strong = Top 25%, Growth Area = Bottom 50%. |                                                          
+  | **Outstanding / Strong / Growth Area** | How your usage ranks per app within your org. Outstanding = Top 10%, Strong = Top 25%, Growth Area = Bottom 50%. |                                                          
   | **Consistency** | How many weeks you used Copilot out of the weeks in your selected date range. |
-  | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts 
-  as one action. |                                                                                            
-  | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting
-   summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
-  | **Peak Week** | The single week where you used Copilot the most. |
+  | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts as one action. |                                                                                            
+  | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
