@@ -61,8 +61,7 @@
   | Term | Definition |
   |---|---|
   | **Org Average** | The average usage across all employees in your organization with a Copilot license. |
-  | **Peer Rank / Percentile** | Where you fall compared to peers. "Top 20%" means you use Copilot more than 80% of colleagues. 
-  Lower number = higher rank. |                                                            
+  | **Peer Rank / Percentile** | Where you fall compared to peers. "Top 20%" means you use Copilot more than 80% of colleagues. Lower number = higher rank. |                                                            
   | **User Category** | Your usage tier — Power User, Habitual User, Novice User, Low User, or Non-User - based on your consistency   and volume over the last 12 weeks. |                                              
   | **Outstanding / Strong / Growth Area** | How your usage ranks per app within your org. Outstanding = Top
   10%, Strong = Top 25%, Growth Area = Bottom 50%. |                                                          
