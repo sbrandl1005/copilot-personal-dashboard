@@ -67,3 +67,4 @@
   | **Consistency** | How many weeks you used Copilot out of the weeks in your selected date range. |
   | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts as one action. |                                                                                            
   | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
+
