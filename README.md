@@ -13,19 +13,23 @@
   See how much time Copilot is saving you, broken down by app and by week. View which specific Copilot features are saving you the 
   most hours, ranked by estimated time saved, and track how your savings trend has changed month over month.                                                                                   
                                                                                                               
-  ### Tab 3 – Usage Comparison                                                                                
-  Compare your Copilot usage against your organization. See how your weekly app actions stack up against the org average, where you 
-  rank across apps (Outstanding Performance, Strong Performance, or Growth Area), and how your organization is distributed across 
-  user categories.                                                    
-                                                                                                              
-  ---                                                                                                         
-                  
+  ### Tab 3 – Usage Journey
+  See your Copilot adoption journey over the last 12 weeks. Track how you progressed through user categories (Non-User → Low User → Novice → Habitual → Power User), view the distribution of users in your organization, and discover the top features used by power users. Includes a prompt-level comparison of your usage vs. power users.
+
+  ### Tab 4 – Usage Comparisons
+  Compare your Copilot usage against your organization. See how your weekly app actions stack up against the org average, where you rank across apps (Outstanding Performance, Strong Performance, or Growth Area), and how your organization is distributed across user categories.
+
+  ---
+
   ## Screenshots
 
-  | Adoption Overview | Engagement & Productivity | Usage Comparison |                                        
-  |---|---|---|
-  | ![](images/adoption-overview.png) | ![](images/engagement-productivity.png) |                             
-  ![](images/usage-comparison.png) |
+  | Adoption Overview | Engagement & Productivity |
+  |---|---|
+  | ![](images/adoption-overview.png) | ![](images/engagement-productivity.png) |
+
+  | Usage Journey | Usage Comparisons |
+  |---|---|
+  | ![](images/usage-journey.png) | ![](images/usage-comparisons.png) |
 
   ---
 
