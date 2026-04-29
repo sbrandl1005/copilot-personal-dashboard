@@ -685,6 +685,22 @@
                     </div>
 
                     <div class="step">
+                        <div class="step-number">6</div>
+                        <div>
+                            <h3>Optional: Configure RLS (Row-Level Security)</h3>
+                            <p>If you want users to only see their own data when viewing the published report, configure RLS in Power BI Desktop and Power BI Service:</p>
+                            <ol>
+                                <li>In Power BI Desktop, go to <strong>Modeling → Manage roles</strong> and create a role (e.g., <code>ViewOwnData</code>).</li>
+                                <li>Select the table that contains <code>PersonId</code> and add the DAX filter:<pre style="background:#111;padding:8px;border-radius:6px;margin:8px 0;color:#fff;">[PersonId] = USERPRINCIPALNAME()</pre></li>
+                                <li>Save the role and test it via <strong>Modeling → View as Roles</strong> to verify users are limited to their own rows.</li>
+                                <li>Publish the report to Power BI Service. In the service, go to the dataset → <strong>Security</strong> and add users or an Azure AD group to the <code>ViewOwnData</code> role.</li>
+                                <li>Confirm access by sharing the report link with a test user and verifying they only see their rows.</li>
+                            </ol>
+                            <p>Note: <code>USERPRINCIPALNAME()</code> typically resolves to the user's email; ensure <code>PersonId</code> values match that format.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
                         <div class="step-number">5</div>
                         <div>
                             <h3>Publish (Optional)</h3>
