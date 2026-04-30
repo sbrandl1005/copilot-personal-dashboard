@@ -526,13 +526,11 @@
                     <h4>Power BI Desktop</h4>
                     <p><a href="https://powerbi.microsoft.com/desktop/" target="_blank">Free download from Microsoft</a></p>
                 </div>
-            </div>
-
-            <div class="callout" style="margin-top:20px;padding:14px;border-radius:8px;background:#eefaf6;border:1px solid #d7efe9;color:#063027;">
-                <h3 style="margin:0 0 6px;">📦 Identifiable user attribute (PersonId)</h3>
-                <p style="margin:0 0 8px;">The report needs a consistent, unique user ID. Best practice: upload a custom attribute using each user’s work <strong>email</strong> as <code>PersonId</code> so activity maps correctly.</p>
-                <p style="margin:0;"><a href="https://learn.microsoft.com/en-us/viva/insights/advanced/admin/prepare-org-data#custom-attributes" target="_blank">MS Learn — Prepare organizational data (custom attributes)</a></p>
-                <p style="margin-top:8px;font-style:italic;color:#0b5049;">To enable identifiable reporting, upload a custom attribute with work email as the unique PersonId.</p>
+                <div class="prereq-item">
+                    <div class="prereq-icon">📦</div>
+                    <h4>Identifiable user attribute (PersonId)</h4>
+                    <p>Upload a custom attribute (recommended: work email) so each user's data maps correctly.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -546,6 +544,7 @@
             <div class="import-tabs">
                 <button class="import-tab active" onclick="switchTab('viva')">Viva Insights Person Query</button>
                 <button class="import-tab" onclick="switchTab('setup')">Power BI Setup</button>
+                <button class="import-tab" onclick="switchTab('identifier')">Identifier (PersonId)</button>
             </div>
 
             <!-- Viva Insights Tab -->
@@ -720,6 +719,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+            
+            <!-- Identifier Tab -->
+            <div id="identifier" class="import-panel">
+                <h3 style="margin-bottom: 20px; color: var(--primary-dark);">Identifier (PersonId) — Required for Mapping</h3>
+                <p style="margin-bottom:12px; color: var(--text-light);">This report requires a unique user identifier so data maps to individuals. Best practice: include a custom attribute with each user's work <strong>email</strong> as <code>PersonId</code>.</p>
+                <ul>
+                    <li>Upload the attribute in your Viva Insights organizational data file.</li>
+                    <li>Ensure PersonId values match the format used in Microsoft 365 (work email).</li>
+                </ul>
+                <p>Learn more: <a href="https://learn.microsoft.com/en-us/viva/insights/advanced/admin/prepare-org-data#custom-attributes" target="_blank">MS Learn — Prepare organizational data (custom attributes)</a></p>
             </div>
         </div>
     </section>
