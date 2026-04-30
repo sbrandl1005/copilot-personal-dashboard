@@ -528,23 +528,11 @@
                 </div>
             </div>
 
-            <div class="callout" style="margin-top:20px;padding:18px;border-radius:8px;background:linear-gradient(180deg,#f8fdfc,#eaf7f5);border:1px solid #d7efe9;color:#0b3b36;">
-                <h3 style="margin-top:0;">📦 Important: Identifiable Attribute Requirement for Reporting</h3>
-                <p>For this report to work correctly, the data must include a consistent, unique user identifier. Viva Insights does not automatically provide a usable identifier for custom reporting scenarios.</p>
-                <ul>
-                    <li>You must upload a custom attribute as part of your organizational data file.</li>
-                    <li>✅ Best practice: use the user’s work <strong>email address</strong> as the identifier (PersonId).</li>
-                </ul>
-                <p><strong>Why email?</strong></p>
-                <ul>
-                    <li>It is unique per user (no duplicates).</li>
-                    <li>It aligns with how users are represented in Microsoft 365.</li>
-                    <li>It ensures the report can correctly map activity and attributes to each person.</li>
-                </ul>
-                <p><em>Think of the email address as the “anchor” that ties all report data back to the correct person.</em></p>
-                <p style="margin-top:8px;">Without a consistent unique identifier (PersonId), users will not map correctly and the report will not function as expected. Learn how to add custom attributes on Microsoft Learn:</p>
-                <p><a href="https://learn.microsoft.com/en-us/viva/insights/advanced/admin/prepare-org-data#custom-attributes" target="_blank">Prepare organizational data in Viva Insights — Custom attributes guidance (MS Learn)</a></p>
-                <div style="margin-top:8px;padding:10px;border-radius:6px;background:#fff;border:1px solid #e6f2ef;color:#063027;">“To enable identifiable reporting, upload a custom attribute in your Viva Insights org file. We recommend using work email as the unique identifier (PersonId), so each user’s data maps correctly in the report.”</div>
+            <div class="callout" style="margin-top:20px;padding:14px;border-radius:8px;background:#eefaf6;border:1px solid #d7efe9;color:#063027;">
+                <h3 style="margin:0 0 6px;">📦 Identifiable user attribute (PersonId)</h3>
+                <p style="margin:0 0 8px;">The report needs a consistent, unique user ID. Best practice: upload a custom attribute using each user’s work <strong>email</strong> as <code>PersonId</code> so activity maps correctly.</p>
+                <p style="margin:0;"><a href="https://learn.microsoft.com/en-us/viva/insights/advanced/admin/prepare-org-data#custom-attributes" target="_blank">MS Learn — Prepare organizational data (custom attributes)</a></p>
+                <p style="margin-top:8px;font-style:italic;color:#0b5049;">To enable identifiable reporting, upload a custom attribute with work email as the unique PersonId.</p>
             </div>
         </div>
     </section>
