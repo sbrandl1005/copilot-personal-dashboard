@@ -43,10 +43,14 @@
                                                                                                               
   ## How to Set It Up
 
-  1. Download `CopilotPersonalDashboard.pbit`                                                                 
+  1. Download your preferred template:
+     - **CSV Import:** `Viva Insights Personal Dashboard V8 (CSV pbit).pbit`
+     - **Direct Query:** `Viva Insights Personal Dashboard V8 (Direct Link).pbit`
   2. Open it in Power BI Desktop
-  3. When prompted, connect to your `CopilotMetrics` data source                                              
-  4. Use the **PersonId** slicer to filter to your own ID                                                     
+  3. When prompted, connect to your data source:
+     - **CSV Import:** enter the file path to your exported CSV
+     - **Direct Query:** enter your Partition ID and Query ID from Viva Insights
+  4. Use the **PersonId** slicer to filter to your own ID
   5. Publish to Power BI Service to access it from your browser                                               
                                                                                                               
   ---                                                                                                         
