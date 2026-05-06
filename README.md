@@ -33,15 +33,43 @@
 
   ---
 
-  ## Prerequisites                                                                                            
-   
-  - Microsoft 365 Copilot license                                                                             
-  - Access to Viva Insights or a CopilotMetrics data export
-  - Power BI Desktop (free download from Microsoft)                                                           
-                                                                                                              
-  ---                                                                                                         
-                                                                                                              
+  ## Prerequisites
+
+  - Microsoft 365 Copilot license — required to generate usage data
+  - Viva Insights access — Analyst Workbench for person queries
+  - Power BI Desktop — [free download from Microsoft](https://powerbi.microsoft.com/desktop/)
+  - **Identifiable user attribute (PersonId)** — upload a custom attribute (recommended: work email) so each user's data maps correctly
+
+  ---
+
   ## How to Set It Up
+
+  ### Step 1 — Build the Person Query in Viva Insights
+
+  1. Go to [analysis.insights.cloud.microsoft](https://analysis.insights.cloud.microsoft) and click **Analysis results**
+  2. Click **Create analysis** → **Person query** → **Set up analysis**
+  3. Configure the query:
+     - **Time period:** Last 6 months (rolling)
+     - **Group by:** Week
+     - **Filter:** Is Active = True
+     - **Attributes:** Organization, FunctionType, TimeZone (minimum required)
+  4. Under the **Microsoft 365 Copilot** category, select **All metrics**
+     > ⚠️ Missing even one metric will cause blank visuals in Power BI
+  5. Click **Save & Run** and wait until **Status = Completed**
+  6. Once complete, copy your **Partition ID** and **Query ID** for use in Power BI
+
+  Key metrics that power this dashboard:
+
+  | Metric | Used For |
+  |---|---|
+  | Copilot assisted hours | Total time saved KPI |
+  | Total Copilot actions taken | Adoption overview & trends |
+  | Copilot actions taken in [App] | Per-app breakdown |
+  | Total Meeting hours summarized or recapped | Teams time saved calculation |
+  | Intelligent recap actions taken | Meeting recap tracking |
+  | Days of active Copilot usage in [App] | Consistency & active days |
+
+  ### Step 2 — Connect to Power BI
 
   1. Download your preferred template:
      - **CSV Import:** `Viva Insights Personal Dashboard V8 (CSV pbit).pbit`
@@ -49,9 +77,23 @@
   2. Open it in Power BI Desktop
   3. When prompted, connect to your data source:
      - **CSV Import:** enter the file path to your exported CSV
-     - **Direct Query:** enter your Partition ID and Query ID from Viva Insights
-  4. Use the **PersonId** slicer to filter to your own ID
-  5. Publish to Power BI Service to access it from your browser                                               
+     - **Direct Query:** enter your **Partition ID** and **Query ID** from Viva Insights
+  4. Use the **PersonId** slicer to filter the report to your own data
+  5. Publish to Power BI Service via **File → Publish** to access from your browser
+
+  ### Optional — Configure Row-Level Security (RLS)
+
+  To restrict users to only their own data when the report is published:
+
+  1. In Power BI Desktop, go to **Modeling → Manage roles** and create a role (e.g. `ViewOwnData`)
+  2. Select the table containing `PersonId` and add the DAX filter:
+     ```
+     [PersonId] = USERPRINCIPALNAME()
+     ```
+  3. Test via **Modeling → View as Roles**, then publish to Power BI Service
+  4. In the service, go to the dataset → **Security** and assign users or an Azure AD group to the role
+
+  > Note: `USERPRINCIPALNAME()` resolves to the user's email — ensure `PersonId` values match that format.                                               
                                                                                                               
   ---                                                                                                         
                                                                                                               
