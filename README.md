@@ -72,8 +72,8 @@
   ### Step 2 — Connect to Power BI
 
   1. Download your preferred template:
-     - **CSV Import:** `Viva Insights Personal Dashboard V8 (CSV pbit).pbit`
-     - **Direct Query:** `Viva Insights Personal Dashboard V8 (Direct Link).pbit`
+     - **CSV Import:** `Viva Insights Personal Dashboard V9 (CSV Import pbit).pbit`
+     - **Direct Query:** `Viva Insights Personal Dashboard V9 (Direct Import pbit).pbit`
   2. Open it in Power BI Desktop
   3. When prompted, connect to your data source:
      - **CSV Import:** enter the file path to your exported CSV
