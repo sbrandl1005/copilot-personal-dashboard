@@ -44,7 +44,15 @@
 
   ## How to Set It Up
 
-  ### Step 1 — Build the Person Query in Viva Insights
+  Choose one of the two options below based on your data source:
+
+  ---
+
+  ### Option A — Viva Insights Person Query
+
+  Use this option if you have access to the Viva Insights Analyst Workbench and want to build a custom person query.
+
+  #### Step 1 — Build the Person Query in Viva Insights
 
   1. Go to [analysis.insights.cloud.microsoft](https://analysis.insights.cloud.microsoft) and click **Analysis results**
   2. Click **Create analysis** → **Person query** → **Set up analysis**
@@ -69,11 +77,11 @@
   | Intelligent recap actions taken | Meeting recap tracking |
   | Days of active Copilot usage in [App] | Consistency & active days |
 
-  ### Step 2 — Connect to Power BI
+  #### Step 2 — Connect to Power BI
 
   1. Download your preferred template:
-     - **CSV Import:** `Viva Insights Personal Dashboard V9 (CSV Import pbit).pbit`
-     - **Direct Query:** `Viva Insights Personal Dashboard V9 (Direct Import pbit).pbit`
+     - **CSV Import:** [`Viva Insights Personal Dashboard V9 (CSV Import pbit).pbit`](Viva%20Insights%20Personal%20Dashboard%20V9%20(CSV%20Import%20pbit).pbit)
+     - **Direct Query:** [`Viva Insights Personal Dashboard V9 (Direct Import pbit).pbit`](Viva%20Insights%20Personal%20Dashboard%20V9%20(Direct%20Import%20pbit).pbit)
   2. Open it in Power BI Desktop
   3. When prompted, connect to your data source:
      - **CSV Import:** enter the file path to your exported CSV
@@ -81,9 +89,31 @@
   4. Use the **PersonId** slicer to filter the report to your own data
   5. Publish to Power BI Service via **File → Publish** to access from your browser
 
+  ---
+
+  ### Option B — Copilot Dashboard Export
+
+  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query.
+
+  #### Step 1 — Export Data from the Copilot Dashboard
+
+  1. Go to the **Copilot Dashboard** (via Viva Insights)
+  2. Click **Export data** in the dashboard UI
+  3. The file will automatically download in your browser
+
+  #### Step 2 — Connect to Power BI
+
+  1. Download the template: [`Copilot Personal Dashboard V7 Template.pbit`](Copilot%20Personal%20Dashboard%20V7%20Template.pbit)
+  2. Open it in Power BI Desktop
+  3. When prompted, enter the file path to your exported CSV
+  4. Use the **PersonId** slicer to filter the report to your own data
+  5. Publish to Power BI Service via **File → Publish** to access from your browser
+
+  ---
+
   ### Optional — Configure Row-Level Security (RLS)
 
-  To restrict users to only their own data when the report is published:
+  To restrict users to only their own data when the report is published (applies to both Option A and Option B):
 
   1. In Power BI Desktop, go to **Modeling → Manage roles** and create a role (e.g. `ViewOwnData`)
   2. Select the table containing `PersonId` and add the DAX filter:
@@ -93,7 +123,7 @@
   3. Test via **Modeling → View as Roles**, then publish to Power BI Service
   4. In the service, go to the dataset → **Security** and assign users or an Azure AD group to the role
 
-  > Note: `USERPRINCIPALNAME()` resolves to the user's email — ensure `PersonId` values match that format.                                               
+  > Note: `USERPRINCIPALNAME()` resolves to the user's email — ensure `PersonId` values match that format.
                                                                                                               
   ---                                                                                                         
                                                                                                               
