@@ -19,6 +19,12 @@
   ### Tab 4 – Usage Comparisons
   Compare your Copilot usage against your organization. See how your weekly app actions stack up against the org average, where you rank across apps (Outstanding Performance, Strong Performance, or Growth Area), and how your organization is distributed across user categories.
 
+  ### Tab 5 – Agent Activity
+  Track your Microsoft 365 Copilot **agent** usage. See KPI cards for active agent users, agent adoption, 28-day retention, total credits used, and total responses generated, plus your agent habit tier (Light → Moderate → Frequent → Daily). View **My Usage by Month**, compare **My Responses vs Others Over Time**, and drill into an **Agent Usage Details Over Time** table. Use the date slider to focus any period.
+
+  ### Tab 6 – Learning & Next Steps
+  Get personalized guidance to grow your Copilot skills — a **Prompt Tip of the Week**, your **Next Unlock** based on features you haven't tried yet, a **Training Recommendation**, and curated **Learning Resources**.
+
   ---
 
   ## Screenshots
@@ -91,21 +97,26 @@
 
   ---
 
-  ### Option B — Copilot Dashboard Export
+  ### Option B — Copilot & Agent Dashboard Export
 
-  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query.
+  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query. This template covers both **Copilot usage** and **Copilot agent** usage.
 
-  #### Step 1 — Export Data from the Copilot Dashboard
+  #### Step 1 — Export Your Data
 
   1. Go to the **Copilot Dashboard** (via Viva Insights)
-  2. Click **Export data** in the dashboard UI
-  3. The file will automatically download in your browser
+  2. Click **Export data** in the dashboard UI — this downloads your **Copilot usage CSV**
+  3. If you use Copilot **agents**, also export the **agent data** (the folder of agent CSVs: `AgentMetadata.csv`, `PersonAgentResponsesMetrics.csv`, `PersonAgentCreditsRetentionMetrics.csv`, `PeopleMetadata.csv`)
+
+  > 💡 You don't need both. The template loads whichever you provide — Copilot data only, agent data only, or both. Any pages without data simply appear blank.
 
   #### Step 2 — Connect to Power BI
 
-  1. Download the template: [`Copilot Personal Dashboard V7 Template.pbit`](Copilot%20Personal%20Dashboard%20V7%20Template.pbit)
+  1. Download the template: [`Copilot and Agent Personal Dashboard Template.pbit`](Copilot%20and%20Agent%20Personal%20Dashboard%20Template.pbit)
   2. Open it in Power BI Desktop
-  3. When prompted, enter the file path to your exported CSV
+  3. When prompted, fill in whichever parameters you have (both are optional):
+     - **CopilotCsvFilePath** — full path to your exported Copilot CSV
+     - **AgentDataFolderPath** — full path to the folder containing your agent CSVs
+     - Leave either one blank if you don't have that data
   4. Use the **PersonId** slicer to filter the report to your own data
   5. Publish to Power BI Service via **File → Publish** to access from your browser
 
