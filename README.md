@@ -37,6 +37,10 @@
   |---|---|
   | ![](images/usage-journey.png) | ![](images/usage-comparisons.png) |
 
+  | Agent Activity |
+  |---|
+  | ![](images/agent-activity.png) |
+
   ---
 
   ## Prerequisites
@@ -54,7 +58,32 @@
 
   ---
 
-  ### Option A — Viva Insights Person Query
+  ### Option A — Copilot & Agent Dashboard Export
+
+  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query. This template covers both **Copilot usage** and **Copilot agent** usage.
+
+  #### Step 1 — Export Your Data
+
+  1. Go to the **Copilot Dashboard** (via Viva Insights)
+  2. Click **Export data** in the dashboard UI — this downloads your **Copilot usage CSV**
+  3. If you use Copilot **agents**, also export the **agent data** (the folder of agent CSVs: `AgentMetadata.csv`, `PersonAgentResponsesMetrics.csv`, `PersonAgentCreditsRetentionMetrics.csv`, `PeopleMetadata.csv`)
+
+  > 💡 You don't need both. The template loads whichever you provide — Copilot data only, agent data only, or both. Any pages without data simply appear blank.
+
+  #### Step 2 — Connect to Power BI
+
+  1. Download the template: [`Copilot and Agent Personal Dashboard Template.pbit`](Copilot%20and%20Agent%20Personal%20Dashboard%20Template.pbit)
+  2. Open it in Power BI Desktop
+  3. When prompted, fill in whichever parameters you have (both are optional):
+     - **CopilotCsvFilePath** — full path to your exported Copilot CSV
+     - **AgentDataFolderPath** — full path to the folder containing your agent CSVs
+     - Leave either one blank if you don't have that data
+  4. Use the **PersonId** slicer to filter the report to your own data
+  5. Publish to Power BI Service via **File → Publish** to access from your browser
+
+  ---
+
+  ### Option B — Viva Insights Person Query
 
   Use this option if you have access to the Viva Insights Analyst Workbench and want to build a custom person query.
 
@@ -97,31 +126,6 @@
 
   ---
 
-  ### Option B — Copilot & Agent Dashboard Export
-
-  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query. This template covers both **Copilot usage** and **Copilot agent** usage.
-
-  #### Step 1 — Export Your Data
-
-  1. Go to the **Copilot Dashboard** (via Viva Insights)
-  2. Click **Export data** in the dashboard UI — this downloads your **Copilot usage CSV**
-  3. If you use Copilot **agents**, also export the **agent data** (the folder of agent CSVs: `AgentMetadata.csv`, `PersonAgentResponsesMetrics.csv`, `PersonAgentCreditsRetentionMetrics.csv`, `PeopleMetadata.csv`)
-
-  > 💡 You don't need both. The template loads whichever you provide — Copilot data only, agent data only, or both. Any pages without data simply appear blank.
-
-  #### Step 2 — Connect to Power BI
-
-  1. Download the template: [`Copilot and Agent Personal Dashboard Template.pbit`](Copilot%20and%20Agent%20Personal%20Dashboard%20Template.pbit)
-  2. Open it in Power BI Desktop
-  3. When prompted, fill in whichever parameters you have (both are optional):
-     - **CopilotCsvFilePath** — full path to your exported Copilot CSV
-     - **AgentDataFolderPath** — full path to the folder containing your agent CSVs
-     - Leave either one blank if you don't have that data
-  4. Use the **PersonId** slicer to filter the report to your own data
-  5. Publish to Power BI Service via **File → Publish** to access from your browser
-
-  ---
-
   ### Optional — Configure Row-Level Security (RLS)
 
   To restrict users to only their own data when the report is published (applies to both Option A and Option B):
@@ -158,4 +162,5 @@
   | **Consistency** | How many weeks you used Copilot out of the weeks in your selected date range. |
   | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts as one action. |                                                                                            
   | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
+
 
