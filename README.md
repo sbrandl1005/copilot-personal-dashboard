@@ -79,7 +79,7 @@
 
   #### Step 2 — Connect to Power BI
 
-  1. Download the template: [`Copilot and Agent Personal Dashboard Template.pbit`](Copilot%20and%20Agent%20Personal%20Dashboard%20Template.pbit)
+  1. Download the template: [`Personal Copilot, Agent, & Cowork Dashboard Template.pbit`](Personal%20Copilot%2C%20Agent%2C%20%26%20Cowork%20Dashboard%20Template.pbit)
   2. Open it in Power BI Desktop
   3. When prompted, fill in whichever parameters you have:
      - **CopilotCsvFilePath** — full path to your exported Copilot CSV
@@ -171,4 +171,3 @@
   | **Consistency** | How many weeks you used Copilot out of the weeks in your selected date range. |
   | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts as one action. |                                                                                            
   | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
-
