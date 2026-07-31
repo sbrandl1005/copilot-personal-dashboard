@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copilot Personal Dashboard</title>
+    <title>Copilot, Agent &amp; Cowork Personal Dashboard</title>
     <style>
         :root {
             --primary: #0078D4;
@@ -419,13 +419,14 @@
 
     <!-- Hero -->
     <header class="hero">
-        <h1>Copilot Personal Dashboard</h1>
-        <p>Track your Microsoft 365 Copilot usage, measure time saved, and compare your engagement against your organization — all in one Power BI report.</p>
+        <h1>Copilot, Agent &amp; Cowork Personal Dashboard</h1>
+        <p>Track Microsoft 365 Copilot, agent, and Cowork activity, measure time saved and credits used, and compare your engagement against your organization — all in one Power BI report.</p>
         <div class="hero-badges">
             <span class="badge">📊 Power BI Template</span>
             <span class="badge">⏱️ Time Saved Tracking</span>
             <span class="badge">🗺️ Usage Journey</span>
             <span class="badge">📈 Org Comparison</span>
+            <span class="badge">🤝 Cowork Consumption</span>
         </div>
     </header>
 
@@ -433,7 +434,7 @@
     <section id="overview">
         <div class="container">
             <h2><span class="icon">📋</span>What's in This Report</h2>
-            <p>Four interactive tabs that give you a complete picture of your Copilot adoption, productivity gains, usage journey, and standing within your organization.</p>
+            <p>Seven interactive tabs cover Copilot adoption, productivity, usage comparisons, agent activity, Cowork consumption, and personalized learning guidance.</p>
 
             <div class="tab-cards">
                 <!-- Tab 1 -->
@@ -520,7 +521,23 @@
 
                 <!-- Tab 6 -->
                 <div class="tab-card">
-                    <div class="tab-card-header">Tab 6 — Learning &amp; Next Steps</div>
+                    <div class="tab-card-header">Tab 6 — My Cowork Activity</div>
+                    <div class="tab-card-img">
+                        <img src="images/cowork-activity.png" alt="My Cowork Activity">
+                    </div>
+                    <div class="tab-card-body">
+                        <ul>
+                            <li>Credits used, sessions, active weeks, and credits per session</li>
+                            <li>Latest weekly change in Cowork credits</li>
+                            <li>Weekly person vs. organization comparisons</li>
+                            <li>Personal usage and spending-policy context</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tab 7 -->
+                <div class="tab-card">
+                    <div class="tab-card-header">Tab 7 — Learning &amp; Next Steps</div>
                     <div class="tab-card-body">
                         <ul>
                             <li>Prompt Tip of the Week</li>
@@ -692,7 +709,7 @@
                             <p>Choose your data connection method:</p>
                             <p>📁 <a href="Viva Insights Personal Dashboard V9 (CSV Import pbit).pbit" download><strong>CSV Import Template</strong></a> — Viva Insights Personal Dashboard V9 (CSV Import pbit) — Import from an exported CSV file</p>
                             <p>🔗 <a href="Viva Insights Personal Dashboard V9 (Direct Import pbit).pbit" download><strong>Direct Query Template</strong></a> — Viva Insights Personal Dashboard V9 (Direct Import pbit) — Connect directly to Viva Insights API using Partition ID &amp; Query ID</p>
-                            <p>🤖 <a href="Copilot and Agent Personal Dashboard Template.pbit" download><strong>Copilot &amp; Agent Template</strong></a> — Copilot and Agent Personal Dashboard — Import from your Copilot Dashboard export CSV and/or agent data folder (either or both)</p>
+                            <p>🤖 <a href="Copilot and Agent Personal Dashboard Template.pbit" download><strong>Copilot, Agent &amp; Cowork Template</strong></a> — Import any combination of a Copilot Dashboard CSV, agent export folder, and Cowork consumption folder.</p>
                         </div>
                     </div>
 
@@ -708,8 +725,13 @@
                         <div class="step-number">3</div>
                         <div>
                             <h3>Connect to Your Data</h3>
-                            <p><strong>CSV Import:</strong> When prompted, enter the file path to your exported CSV.<br>
-                            <strong>Direct Query:</strong> When prompted, enter your <strong>Partition ID</strong> and <strong>Query ID</strong> from the Viva Insights person query.</p>
+                            <p><strong>Copilot, Agent &amp; Cowork template:</strong> Enter any available paths for <code>CopilotCsvFilePath</code>, <code>AgentDataFolderPath</code>, and <code>CoworkDataFolderPath</code>; leave unavailable sources blank.<br>
+                            <strong>CSV Import:</strong> Enter the file path to your exported CSV.<br>
+                            <strong>Direct Query:</strong> Enter your <strong>Partition ID</strong> and <strong>Query ID</strong> from the Viva Insights person query.</p>
+                            <div class="callout">
+                                <strong>🤝 Cowork folder contents</strong>
+                                Include <code>PersonServiceCreditsMetrics.csv</code>, <code>PeopleMetaData.csv</code> (or <code>PeopleMetadata.csv</code>), and <code>SpendingPolicyMetadata.csv</code>.
+                            </div>
                         </div>
                     </div>
 
@@ -725,15 +747,18 @@
                         <div class="step-number">6</div>
                         <div>
                             <h3>Optional: Configure RLS (Row-Level Security)</h3>
-                            <p>If you want users to only see their own data when viewing the published report, configure RLS in Power BI Desktop and Power BI Service:</p>
+                            <p>The Copilot, Agent and Cowork template includes the <code>ViewOwnData</code> role. Review and test it before publishing:</p>
                             <ol>
-                                <li>In Power BI Desktop, go to <strong>Modeling → Manage roles</strong> and create a role (e.g., <code>ViewOwnData</code>).</li>
-                                <li>Select the table that contains <code>PersonId</code> and add the DAX filter:<pre style="background:#111;padding:8px;border-radius:6px;margin:8px 0;color:#fff;">[PersonId] = USERPRINCIPALNAME()</pre></li>
-                                <li>Save the role and test it via <strong>Modeling → View as Roles</strong> to verify users are limited to their own rows.</li>
+                                <li>Confirm <code>PersonId</code> contains each user's work email/UPN.</li>
+                                <li>In Power BI Desktop, go to <strong>Modeling → Manage roles</strong> and review <code>ViewOwnData</code>:<pre style="background:#111;padding:8px;border-radius:6px;margin:8px 0;color:#fff;">[PersonId] = USERPRINCIPALNAME()</pre></li>
+                                <li>Test via <strong>Modeling → View as Roles</strong>. Select only <code>ViewOwnData</code>, select <strong>Other user</strong>, and enter that user's email.</li>
                                 <li>Publish the report to Power BI Service. In the service, go to the dataset → <strong>Security</strong> and add users or an Azure AD group to the <code>ViewOwnData</code> role.</li>
                                 <li>Confirm access by sharing the report link with a test user and verifying they only see their rows.</li>
                             </ol>
-                            <p>Note: <code>USERPRINCIPALNAME()</code> typically resolves to the user's email; ensure <code>PersonId</code> values match that format.</p>
+                            <div class="callout warning">
+                                <strong>⚠️ Test one role at a time</strong>
+                                Do not select <code>ViewOwnData</code> together with an unrestricted role. Power BI combines role access, which can expose all rows.
+                            </div>
                         </div>
                     </div>
 
@@ -936,7 +961,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Copilot Personal Dashboard &nbsp;•&nbsp; Built with <a href="https://powerbi.microsoft.com/" target="_blank">Power BI</a> &amp; <a href="https://www.microsoft.com/en-us/microsoft-viva/insights" target="_blank">Viva Insights</a></p>
+        <p>Copilot, Agent &amp; Cowork Personal Dashboard &nbsp;•&nbsp; Built with <a href="https://powerbi.microsoft.com/" target="_blank">Power BI</a> &amp; <a href="https://www.microsoft.com/en-us/microsoft-viva/insights" target="_blank">Viva Insights</a></p>
         <p style="margin-top: 8px;">For data import reference, see <a href="https://github.com/microsoft/DecodingSuperUsage" target="_blank">microsoft/DecodingSuperUsage</a></p>
     </footer>
 

@@ -1,4 +1,4 @@
-# copilot-personal-dashboard
+# Copilot, Agent, and Cowork Personal Dashboard
  ---                                                                                                         
                   
   ## What's in This Report
@@ -22,7 +22,10 @@
   ### Tab 5 – Agent Activity
   Track your Microsoft 365 Copilot **agent** usage. See KPI cards for active agent users, agent adoption, 28-day retention, total credits used, and total responses generated, plus your agent habit tier (Light → Moderate → Frequent → Daily). View **My Usage by Month**, compare **My Responses vs Others Over Time**, and drill into an **Agent Usage Details Over Time** table. Use the date slider to focus any period.
 
-  ### Tab 6 – Learning & Next Steps
+  ### Tab 6 – My Cowork Activity
+  Track Microsoft 365 Copilot **Cowork** credits, sessions, active weeks, credits per session, and latest weekly change. Compare weekly credits and sessions with your organization, review organization-level credit usage, and inspect personal usage and spending-policy context.
+
+  ### Tab 7 – Learning & Next Steps
   Get personalized guidance to grow your Copilot skills — a **Prompt Tip of the Week**, your **Next Unlock** based on features you haven't tried yet, a **Training Recommendation**, and curated **Learning Resources**.
 
   ---
@@ -37,9 +40,9 @@
   |---|---|
   | ![](images/usage-journey.png) | ![](images/usage-comparisons.png) |
 
-  | Agent Activity |
-  |---|
-  | ![](images/agent-activity.png) |
+  | Agent Activity | My Cowork Activity |
+  |---|---|
+  | ![](images/agent-activity.png) | ![](images/cowork-activity.png) |
 
   ---
 
@@ -58,26 +61,31 @@
 
   ---
 
-  ### Option A — Copilot & Agent Dashboard Export
+  ### Option A — Copilot, Agent & Cowork Dashboard Export
 
-  Use this option if you want to export data directly from the Copilot Dashboard without building a custom person query. This template covers both **Copilot usage** and **Copilot agent** usage.
+  Use this option to load exports from the Copilot Dashboard without building a custom person query. The template supports **Copilot usage**, **Copilot agent usage**, and **Cowork consumption**.
 
   #### Step 1 — Export Your Data
 
   1. Go to the **Copilot Dashboard** (via Viva Insights)
   2. Click **Export data** in the dashboard UI — this downloads your **Copilot usage CSV**
   3. If you use Copilot **agents**, also export the **agent data** (the folder of agent CSVs: `AgentMetadata.csv`, `PersonAgentResponsesMetrics.csv`, `PersonAgentCreditsRetentionMetrics.csv`, `PeopleMetadata.csv`)
+  4. If you use **Cowork**, export its consumption data folder containing:
+     - `PersonServiceCreditsMetrics.csv`
+     - `PeopleMetaData.csv` or `PeopleMetadata.csv`
+     - `SpendingPolicyMetadata.csv`
 
-  > 💡 You don't need both. The template loads whichever you provide — Copilot data only, agent data only, or both. Any pages without data simply appear blank.
+  > 💡 All three inputs are optional. Load any combination of Copilot, Agent, and Cowork data; pages without source data remain blank.
 
   #### Step 2 — Connect to Power BI
 
   1. Download the template: [`Copilot and Agent Personal Dashboard Template.pbit`](Copilot%20and%20Agent%20Personal%20Dashboard%20Template.pbit)
   2. Open it in Power BI Desktop
-  3. When prompted, fill in whichever parameters you have (both are optional):
+  3. When prompted, fill in whichever parameters you have:
      - **CopilotCsvFilePath** — full path to your exported Copilot CSV
      - **AgentDataFolderPath** — full path to the folder containing your agent CSVs
-     - Leave either one blank if you don't have that data
+     - **CoworkDataFolderPath** — full path to the folder containing your Cowork CSVs
+     - Leave any unavailable source blank
   4. Use the **PersonId** slicer to filter the report to your own data
   5. Publish to Power BI Service via **File → Publish** to access from your browser
 
@@ -128,17 +136,18 @@
 
   ### Optional — Configure Row-Level Security (RLS)
 
-  To restrict users to only their own data when the report is published (applies to both Option A and Option B):
+  The Copilot, Agent, and Cowork template includes the `ViewOwnData` role. To restrict users to their own data when the report is published:
 
-  1. In Power BI Desktop, go to **Modeling → Manage roles** and create a role (e.g. `ViewOwnData`)
-  2. Select the table containing `PersonId` and add the DAX filter:
+  1. Confirm `PersonId` contains each user's work email/UPN.
+  2. In Power BI Desktop, go to **Modeling → Manage roles** and review `ViewOwnData`, which uses:
      ```
      [PersonId] = USERPRINCIPALNAME()
      ```
-  3. Test via **Modeling → View as Roles**, then publish to Power BI Service
-  4. In the service, go to the dataset → **Security** and assign users or an Azure AD group to the role
+  3. Test via **Modeling → View as Roles**. To simulate a user in Desktop, select only `ViewOwnData`, select **Other user**, and enter that user's email.
+  4. Publish to Power BI Service.
+  5. In the service, go to the semantic model → **Security** and assign users or a Microsoft Entra group to `ViewOwnData`.
 
-  > Note: `USERPRINCIPALNAME()` resolves to the user's email — ensure `PersonId` values match that format.
+  > ⚠️ Do not test `ViewOwnData` together with an unrestricted role. Power BI combines role access, which can expose all rows.
                                                                                                               
   ---                                                                                                         
                                                                                                               
@@ -162,5 +171,4 @@
   | **Consistency** | How many weeks you used Copilot out of the weeks in your selected date range. |
   | **Actions** | Each time you use a Copilot feature (e.g., drafting an email, summarizing a meeting) counts as one action. |                                                                                            
   | **Time Saved** | An estimate based on Microsoft's research — each Copilot action saves ~6 minutes. Meeting summaries count the actual meeting length, and Intelligent Recap saves ~30 minutes. |                      
-
 
