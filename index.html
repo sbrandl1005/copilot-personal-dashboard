@@ -529,8 +529,10 @@
                         <ul>
                             <li>Credits used, sessions, active weeks, and credits per session</li>
                             <li>Latest weekly change in Cowork credits</li>
-                            <li>Weekly person vs. organization comparisons</li>
-                            <li>Personal usage and spending-policy context</li>
+                            <li>Weekly credits vs. organization average for consumption volume</li>
+                            <li>Weekly sessions vs. organization average for usage frequency</li>
+                            <li>Credits used vs. combined user spending-policy limits</li>
+                            <li>Personal usage, organization, function, and policy detail</li>
                         </ul>
                     </div>
                 </div>
@@ -731,6 +733,10 @@
                             <div class="callout">
                                 <strong>🤝 Cowork folder contents</strong>
                                 Include <code>PersonServiceCreditsMetrics.csv</code>, <code>PeopleMetaData.csv</code> (or <code>PeopleMetadata.csv</code>), and <code>SpendingPolicyMetadata.csv</code>.
+                            </div>
+                            <div class="callout">
+                                <strong>📊 My Cowork Activity comparisons</strong>
+                                Weekly credits show consumption volume vs. the organization average, weekly sessions show usage frequency vs. the organization average, and credits used vs. user spending limit shows remaining policy capacity. Select one <code>PersonId</code> when testing without RLS; limits are summed across that user's distinct spending policies.
                             </div>
                         </div>
                     </div>

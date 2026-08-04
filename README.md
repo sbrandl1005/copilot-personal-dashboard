@@ -23,7 +23,7 @@
   Track your Microsoft 365 Copilot **agent** usage. See KPI cards for active agent users, agent adoption, 28-day retention, total credits used, and total responses generated, plus your agent habit tier (Light → Moderate → Frequent → Daily). View **My Usage by Month**, compare **My Responses vs Others Over Time**, and drill into an **Agent Usage Details Over Time** table. Use the date slider to focus any period.
 
   ### Tab 6 – My Cowork Activity
-  Track Microsoft 365 Copilot **Cowork** credits, sessions, active weeks, credits per session, and latest weekly change. Compare weekly credits and sessions with your organization, review organization-level credit usage, and inspect personal usage and spending-policy context.
+  Track Microsoft 365 Copilot **Cowork** credits, sessions, active weeks, credits per session, and latest weekly change. The three comparison visuals answer different questions: **weekly credits** compare consumption volume with the organization average, **weekly sessions** compare usage frequency with the organization average, and **credits used vs user spending limit** shows consumed capacity against the selected user's combined spending-policy limits. The detail table provides person, organization, function, policy, session, credit, and efficiency context.
 
   ### Tab 7 – Learning & Next Steps
   Get personalized guidance to grow your Copilot skills — a **Prompt Tip of the Week**, your **Next Unlock** based on features you haven't tried yet, a **Training Recommendation**, and curated **Learning Resources**.
@@ -88,6 +88,8 @@
      - Leave any unavailable source blank
   4. Use the **PersonId** slicer to filter the report to your own data
   5. Publish to Power BI Service via **File → Publish** to access from your browser
+
+  > 💡 On **My Cowork Activity**, select one `PersonId` when testing without RLS. The spending-limit comparison sums the `User limit` values across that user's distinct spending policies and compares the result with credits used in the selected date range. Blank source limits remain blank.
 
   ---
 
